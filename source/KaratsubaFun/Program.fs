@@ -27,6 +27,7 @@ let splitTail x m =
 let leftShift x m =
     x @ List.replicate m 0
 
+
 let multByOneDigit (x: int list) d =
     let rec multCurrentDigit i carry xByd =
         if i < 0 then
@@ -79,8 +80,8 @@ let main _ =
     let n999 = createNumber "999"
     let x = createNumber "12345"
     let y = createNumber "6789"
-    let bigX = createNumber "123456789012345678901234567890"
-    let bigY = createNumber "98765432109876543210"
+    let bigX = createNumber "3141592653589793238462643383279502884197169399375105820974944592"
+    let bigY = createNumber "2718281828459045235360287471352662497757247093699959574966967627"
 
     printfn "%s %s %s" (toString one) (toString n99) (toString (karatsuba one n99))
     printfn "%s %s %s" (toString n99) (toString one) (toString (karatsuba n99 one))
@@ -100,4 +101,5 @@ let main _ =
     printfn "%s %s %s" (toString bigY) (toString bigX) (toString (karatsuba bigY bigX))
     printfn "%s %s %s" (toString bigX) (toString bigX) (toString (karatsuba bigX bigX))
 
+    System.Console.ReadLine() |> ignore
     0
